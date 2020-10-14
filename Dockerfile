@@ -1,9 +1,6 @@
 FROM node:12-alpine
 WORKDIR /usr/app
-COPY package*.json ./
-RUN npm install
 COPY . .
-RUN npm run build
-WORKDIR ./dist
+RUN npm install
 EXPOSE 3002
 CMD node app.js
